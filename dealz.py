@@ -157,7 +157,7 @@ def list_items(msg):
 
     with open("./wanted_idealo_{}.txt".format(cid), "r") as list:
         lines = list.readlines()
-    bot.send_message(cid, "[MyDealz] Suche nach Deals für: " + str(lines).replace("[", "").replace("]", "")) # fix \n
+    bot.send_message(cid, "[IDEALO] Suche nach Deals für: " + str(lines).replace("[", "").replace("]", "")) # fix \n
 
 def telegram_bot():
     while True:
