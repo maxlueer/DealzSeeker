@@ -29,3 +29,5 @@ You can use the following commands on Telegram:
 * /list: Show list of all wanted products
 * /reset: Reset list of discovered deals
 * /hello: Ask for life sign without changing anything
+* /pause: Stop searching for deals
+* /resume: Resume searching for deals

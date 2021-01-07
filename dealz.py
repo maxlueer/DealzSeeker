@@ -53,6 +53,10 @@ def get_settings():
 
 get_settings()
 
+global stop; global stop2
+stop = False
+stop2 = False
+
 # Debug mode
 def debug(text):	
     if debug_mode:
@@ -159,6 +163,25 @@ def list_items(msg):
         lines = list.readlines()
     bot.send_message(cid, "[IDEALO] Suche nach Deals für: " + str(lines).replace("[", "").replace("]", "")) # fix \n
 
+@bot.message_handler(commands=["pause"])
+def list_items(msg):
+    cid = msg.chat.id
+    if cid == tg_cid
+        stop = True
+    if cid == tg_cid2
+        stop2 = True
+    bot.send_message(cid, "Suche pausiert. Weiter mit \"/restart\""))
+
+@bot.message_handler(commands=["resume"])
+def list_items(msg):
+    cid = msg.chat.id
+    if cid == tg_cid
+        stop = False
+    if cid == tg_cid2
+        stop2 = False
+    bot.send_message(cid, "Suche wird fortgesetzt.")) 
+
+
 def telegram_bot():
     while True:
         try:
@@ -188,7 +211,7 @@ def mydealz_search(tg_cid, found_deals, articles, wanted_articles):
             get_found()
             time.sleep(4)
 
-def mydealz():
+def mydealz(cid):
     print("MyDealz")
     site = requests.get("https://www.mydealz.de/new?page=1", headers=header, timeout=20)
     soup = bs(site.content, "lxml")
@@ -199,9 +222,7 @@ def mydealz():
         print("Keine Listings gefunden. Seite geändert?")
 
     for articles in listings:
-        mydealz_search(tg_cid, found_deals, articles, wanted_articles)
-        if tg_cid2 != 0:
-            mydealz_search(tg_cid2, found_deals2, articles, wanted_articles2)
+        mydealz_search(cid, found_deals, articles, wanted_articles)
 
 def idealo_search(tg_cid, found_deals, wanted_articles):
     for wanted_item_full in wanted_articles:
@@ -245,11 +266,9 @@ def idealo_search(tg_cid, found_deals, wanted_articles):
                 debug("Idealo: Search Failed")
             time.sleep(1)
 
-def idealo():
+def idealo(cid):
     print("Idealo")
-    idealo_search(tg_cid, found_deals_idealo, wanted_articles_idealo)
-    if tg_cid2 != 0:
-        idealo_search(tg_cid2, found_deals_idealo2, wanted_articles_idealo2)
+    idealo_search(cid, found_deals_idealo, wanted_articles_idealo)
 
 # seeker
 def main_seeker():
@@ -258,9 +277,12 @@ def main_seeker():
         try:
             debug("Seeking for wanted items")
 
-            mydealz()
-
-            idealo()
+            if stop == False:
+                mydealz(tg_cid)
+                idealo(tg_cid)
+            if stop2 == False and tg_cid2 != 0:
+                mydealz(tg_cid2)
+                idealo(tg_cid2)
 
             debug("Seeking for wanted items complete")
         except:
