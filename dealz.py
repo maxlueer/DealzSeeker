@@ -73,7 +73,7 @@ def get_wanted():
     wanted_articles = [line.rstrip("\n") for line in open ("./wanted_{}.txt".format(tg_cid))]
     wanted_articles_idealo = [line.rstrip("\n") for line in open ("./wanted_idealo_{}.txt".format(tg_cid))]
     wanted_articles2 = [line.rstrip("\n") for line in open ("./wanted_{}.txt".format(tg_cid2))]
-    wanted_articles_idealo_2 = [line.rstrip("\n") for line in open ("./wanted_idealo_{}.txt".format(tg_cid2))]
+    wanted_articles_idealo2 = [line.rstrip("\n") for line in open ("./wanted_idealo_{}.txt".format(tg_cid2))]
 
 # Telegram bot
 bot = telebot.TeleBot(tg_token)

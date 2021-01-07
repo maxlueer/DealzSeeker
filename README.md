@@ -16,6 +16,11 @@ You can control the following settings in `settings.txt`:
 * tg_cid: Set recipient chat id on Telegram
 * tg_cid2: Set second recipient chat id on Telegram (0 for disabled)
 
+Start the DealzSeeker with:
+```bash
+  $ sudo python3 dealz.py
+```
+
 You can use the following commands on Telegram:
 * /addMyDealz [item]: Add item to list of wanted products
 * /addIdealo [URL];[PRICEasIntegerValue]: Add idealo URL and wanted price to list of wanted products
