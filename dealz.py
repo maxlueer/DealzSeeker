@@ -179,7 +179,7 @@ def list_items(msg):
         stop = False
     if cid == tg_cid2:
         stop2 = False
-    bot.send_message(cid, "Suche wird fortgesetzt.")) 
+    bot.send_message(cid, "Suche wird fortgesetzt.")
 
 
 def telegram_bot():
