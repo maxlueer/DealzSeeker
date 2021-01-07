@@ -166,18 +166,18 @@ def list_items(msg):
 @bot.message_handler(commands=["pause"])
 def list_items(msg):
     cid = msg.chat.id
-    if cid == tg_cid
+    if cid == tg_cid:
         stop = True
-    if cid == tg_cid2
+    if cid == tg_cid2:
         stop2 = True
     bot.send_message(cid, "Suche pausiert. Weiter mit \"/restart\""))
 
 @bot.message_handler(commands=["resume"])
 def list_items(msg):
     cid = msg.chat.id
-    if cid == tg_cid
+    if cid == tg_cid:
         stop = False
-    if cid == tg_cid2
+    if cid == tg_cid2:
         stop2 = False
     bot.send_message(cid, "Suche wird fortgesetzt.")) 
 
