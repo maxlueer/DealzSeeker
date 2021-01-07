@@ -170,7 +170,7 @@ def list_items(msg):
         stop = True
     if cid == tg_cid2:
         stop2 = True
-    bot.send_message(cid, "Suche pausiert. Weiter mit \"/restart\""))
+    bot.send_message(cid, "Suche pausiert. Weiter mit /restart")
 
 @bot.message_handler(commands=["resume"])
 def list_items(msg):
