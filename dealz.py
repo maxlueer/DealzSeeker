@@ -77,7 +77,6 @@ def get_wanted():
 
 # Telegram bot
 bot = telebot.TeleBot(tg_token)
-bot_priority = bot #telebot.TeleBot(tg_token_priority)
 
 @bot.message_handler(commands=["hello"])
 def hello(msg):
@@ -183,7 +182,7 @@ def mydealz_search(tg_cid, found_deals, articles, wanted_articles):
 
             print("[MYDEALZ] %s: %s" % (re.sub(r"[^\x00-\x7F]+"," ", title), proc_link))
             if telegram:
-                bot_priority.send_message(tg_cid, wish + " [MYDEALZ] %s: %s" % (title, proc_link), disable_web_page_preview=True)
+                bot.send_message(tg_cid, wish + " [MYDEALZ] %s: %s" % (title, proc_link), disable_web_page_preview=True)
             with open("./found_{}.txt".format(tg_cid), "a") as found:
                 found.write(dealid + "\n")
             get_found()
@@ -250,7 +249,7 @@ def idealo():
     print("Idealo")
     idealo_search(tg_cid, found_deals_idealo, wanted_articles_idealo)
     if tg_cid2 != 0:
-        idealo_search(tg_cid2, found_deals_idealo2, wanted_articles2_idealo)
+        idealo_search(tg_cid2, found_deals_idealo2, wanted_articles_idealo2)
 
 # seeker
 def main_seeker():
