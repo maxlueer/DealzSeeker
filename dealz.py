@@ -87,6 +87,11 @@ def hello(msg):
     cid = msg.chat.id
     bot.send_message(cid, "Hi! " + wave + " Ich bin noch da, keine Sorge.")
 
+@bot.message_handler(commands=["help"])
+def help(msg):
+    cid = msg.chat.id
+    bot.send_message(cid, "Schau mal hier: https://github.com/maxlueer/DealzSeeker")
+
 @bot.message_handler(commands=["addMyDealz"])
 def add_item(msg):
     cid = msg.chat.id
@@ -170,7 +175,7 @@ def list_items(msg):
         stop = True
     if cid == tg_cid2:
         stop2 = True
-    bot.send_message(cid, "Suche pausiert. Weiter mit /restart")
+    bot.send_message(cid, "Suche pausiert. Weiter mit /resume")
 
 @bot.message_handler(commands=["resume"])
 def list_items(msg):
