@@ -18,7 +18,7 @@ You can control the following settings in `settings.txt`:
 
 Start the DealzSeeker with:
 ```bash
-  $ sudo python3 dealz.py
+  $ python3 dealz.py
 ```
 
 You can use the following commands on Telegram:
