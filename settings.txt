@@ -1,0 +1,6 @@
+debug_mode=1
+sleep_time=60
+telegram=0
+tg_token="botToken"
+tg_cid=123456789
+tg_cid2=223456789
