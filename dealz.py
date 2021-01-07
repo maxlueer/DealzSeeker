@@ -69,7 +69,7 @@ def get_found():
 
 # Get wanted articles from file
 def get_wanted():
-    global wanted_articles; global wanted_articles2; global wanted_articles_idealo; global wanted_articles_idealo_2
+    global wanted_articles; global wanted_articles2; global wanted_articles_idealo; global wanted_articles_idealo2
     wanted_articles = [line.rstrip("\n") for line in open ("./wanted_{}.txt".format(tg_cid))]
     wanted_articles_idealo = [line.rstrip("\n") for line in open ("./wanted_idealo_{}.txt".format(tg_cid))]
     wanted_articles2 = [line.rstrip("\n") for line in open ("./wanted_{}.txt".format(tg_cid2))]
