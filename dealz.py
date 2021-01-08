@@ -284,10 +284,10 @@ def main_seeker():
 
             if stop == False:
                 mydealz(tg_cid)
-                idealo(tg_cid)
+                #idealo(tg_cid)
             if stop2 == False and tg_cid2 != 0:
                 mydealz(tg_cid2)
-                idealo(tg_cid2)
+                #idealo(tg_cid2)
 
             debug("Seeking for wanted items complete")
         except:
